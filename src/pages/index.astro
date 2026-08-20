@@ -1,0 +1,212 @@
+---
+import Layout from "../layouts/Layout.astro";
+import AltrLogo from "../components/AltrLogo.astro";
+import { Image } from 'astro:assets';
+import heroImage from '../images/test.png';
+
+const services = [
+  { title: "Coming Soon...", date: "Sep 20, 2026", img: "altr-service-2" },
+];
+---
+
+<Layout title="Home">
+  <!-- HERO -->
+  <section class="relative overflow-hidden pt-40 pb-28 md:pt-52 md:pb-36">
+    <div class="pointer-events-none absolute inset-0 -z-10">
+      <div class="absolute left-1/2 top-10 h-[520px] w-[520px] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(255,106,44,0.25),transparent_70%)] blur-2xl"></div>
+    </div>
+
+    <div class="mx-auto max-w-4xl px-6 text-center">
+      <p class="eyebrow reveal">Live every Sunday · online first</p>
+      <h1 class="reveal mt-6 font-display text-6xl md:text-8xl text-[color:var(--color-paper)] flex items-center justify-center gap-4">
+        <AltrLogo height = "110px"/>
+        ALTR
+      </h1>
+      <p class="reveal mt-6 text-lg md:text-xl text-[color:var(--color-muted)] max-w-2xl mx-auto">
+        A church that meets you where you are, inviting you 
+        to explore faith, find authentic community, and experience 
+        church in a whole new way—streaming live on Twitch and 
+        connecting every day through Discord.
+      </p>
+      <div class="reveal mt-10 flex flex-wrap justify-center gap-4">
+        <!-- <a href="#watch" class="btn-ghost">Watch Live</a> -->
+        <a href="#" aria-disabled="true" tabindex="-1" class="btn-ghost pointer-events-none opacity-50 cursor-not-allowed">Watch Live - Coming soon</a> 
+        <a href="#discord" class="btn-ember">Join the Discord</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Test Start -->
+  <!-- <section class="relative overflow-hidden pt-40 pb-28 md:pt-52 md:pb-36">
+    
+    <div class="absolute inset-0 z-0">
+      <Image
+        src={heroImage}
+        alt=""
+        class="h-full w-full object-cover"
+        widths={[640, 1024, 1600, 2000]}
+        sizes="100vw"
+        loading="eager"
+        fetchpriority="high"
+      />
+    </div> -->
+  
+    <!-- Dark overlay for text legibility -->
+    <!-- <div class="absolute inset-0 z-10 bg-black/60"></div>
+  
+     Glow effect
+    <div class="pointer-events-none absolute inset-0 z-20">
+      <div class="absolute left-1/2 top-10 h-[520px] w-[520px] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(255,106,44,0.25),transparent_70%)] blur-2xl"></div>
+    </div>
+  
+     Content 
+    <div class="relative z-30 mx-auto max-w-4xl px-6 text-center">
+      <p class="eyebrow reveal">Live every Sunday · online first</p>
+      <h1 class="reveal mt-6 font-display text-6xl md:text-8xl text-[color:var(--color-paper)] flex items-center justify-center gap-4">
+         <Ember size={1} />
+        ALTR
+      </h1>
+      <p class="reveal mt-6 text-2xl text-[color:var(--color-paper)] max-w-2xl mx-auto">See Faith Differently</p>
+      <p class="reveal mt-6 text-lg md:text-xl text-[color:var(--color-muted)] max-w-2xl mx-auto">
+        A church that meets you where you are, inviting you 
+        to explore faith, find authentic community, and experience 
+        church in a whole new way—streaming live on Twitch and 
+        connecting every day through Discord.
+      </p>
+      <div class="reveal mt-10 flex flex-wrap justify-center gap-4">
+        <a href="#" aria-disabled="true" tabindex="-1" class="btn-ghost pointer-events-none opacity-50 cursor-not-allowed">Watch Live - Coming soon</a> 
+        <a href="#discord" class="btn-ember">Join the Discord</a>
+      </div>
+    </div>
+  </section>
+  
+  <div class="h-16 md:h-12 bg-[color:var(--color-bg)]"></div> -->
+  <!-- Test End -->
+
+  <!-- WHERE TO FIND US -->
+  <section class="mx-auto max-w-6xl px-6 pb-24">
+    <div class="reveal card grid gap-8 p-8 md:p-10 md:grid-cols-3">
+      <div>
+        <p class="eyebrow">Where to find us</p>
+        <p class="mt-3 text-2xl font-display text-[color:var(--color-paper)]">Sundays, 7:00 PM ET</p>
+        <p class="mt-2 text-sm text-[color:var(--color-muted)]">Wherever you've got a signal.</p>
+      </div>
+      <div>
+        <p class="eyebrow">Live on</p>
+        <p class="mt-3 text-2xl font-display text-[color:var(--color-paper)]">Twitch</p>
+        <p class="mt-2 text-sm text-[color:var(--color-muted)]">Chat's open the whole time.</p>
+      </div>
+      <div>
+        <p class="eyebrow">Between services</p>
+        <p class="mt-3 text-[color:var(--color-paper)]">Discord, always on</p>
+        <p class="mt-2 text-sm text-[color:var(--color-muted)]">Where the community lives.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONNECT & GIVE -->
+  <section id="watch" class="mx-auto max-w-6xl px-6 pb-24 grid gap-6 md:grid-cols-2">
+    <div class="reveal card p-8 flex flex-col">
+      <div class="divider-flame mb-6"><span class="eyebrow">PRAYER</span></div>
+      <h3 class="font-display text-3xl text-[color:var(--color-paper)]">Bring what you're going through</h3>
+      <p class="mt-4 text-[color:var(--color-muted)] flex-1">
+        You don't need the right words. Send a prayer request and someone
+        from ALTR will be praying with you. Whether it's a praise or unexpected 
+        event we are here for you.
+      </p>
+      <a href="/prayer" target="_blank" rel="noopener noreferrer" class="btn-ember mt-6 self-start">
+        Send a prayer request
+      </a>
+    </div>
+
+    <div id="discord" class="reveal card p-8 flex flex-col">
+      <div class="divider-flame mb-6"><span class="eyebrow">Generosity</span></div>
+      <h3 class="font-display text-3xl text-[color:var(--color-paper)]">Give to what God is doing</h3>
+      <p class="mt-4 text-[color:var(--color-muted)] flex-1">
+        Your generosity makes a difference. When you give to ALTR Church, 
+        you’re helping create opportunities for people to encounter Jesus, 
+        find community, and take their next step in faith. Thank you for partnering with us through your generosity!
+      </p>
+      <a href="/give" target="_blank" rel="noopener noreferrer" class="btn-ember mt-6 self-start">
+        Worship through generosity
+      </a>
+    </div>
+  </section>
+
+  <!-- PREVIOUS SERVICES -->
+  <section class="mx-auto max-w-6xl px-6 pb-24">
+    <div class="reveal flex items-end justify-between mb-8">
+      <div>
+        <p class="eyebrow">Missed one?</p>
+        <h2 class="mt-2 font-display text-4xl text-[color:var(--color-paper)]">Previous services</h2>
+      </div>
+      <a href="https://youtube.com/" target="_blank" rel="noopener noreferrer" class="hidden sm:inline text-sm text-[color:var(--color-ember-soft)] hover:text-[color:var(--color-gold)]">
+        View all &rarr;
+      </a>
+    </div>
+
+    <div class="grid gap-6 md:grid-cols-3">
+      {services.map((s) => (
+        <a href="https://youtube.com/" target="_blank" rel="noopener noreferrer" class="reveal card overflow-hidden group">
+          <div class="aspect-video overflow-hidden">
+            <img
+              src={`https://picsum.photos/seed/${s.img}/640/360`}
+              alt={`Replay thumbnail for ${s.title}`}
+              class="w-full h-full object-cover grayscale-[30%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500"
+              loading="lazy"
+              width="640"
+              height="360"
+            />
+          </div>
+          <div class="p-5">
+            <p class="text-xs text-[color:var(--color-muted)] font-mono">{s.date}</p>
+            <p class="mt-1 font-display text-lg text-[color:var(--color-paper)] group-hover:text-[color:var(--color-ember-soft)] transition-colors">
+              {s.title}
+            </p>
+          </div>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <!-- YOUTUBE -->
+  <section class="mx-auto max-w-6xl px-6 pb-24">
+    <div class="reveal card grid md:grid-cols-2 overflow-hidden">
+      <div class="aspect-video md:aspect-auto">
+        <img
+          src="https://picsum.photos/seed/altr-youtube/800/600"
+          alt="ALTR YouTube channel preview"
+          class="w-full h-full object-cover"
+          loading="lazy"
+          width="800"
+          height="600"
+        />
+      </div>
+      <div class="p-8 md:p-10 flex flex-col justify-center">
+        <p class="eyebrow">YouTube</p>
+        <h3 class="mt-2 font-display text-3xl text-[color:var(--color-paper)]">Every message, on demand</h3>
+        <p class="mt-4 text-[color:var(--color-muted)]">
+          Full services, short clips, and the occasional behind-the-scenes —
+          all archived so you can catch up on your own time.
+        </p>
+        <a href="https://youtube.com/" target="_blank" rel="noopener noreferrer" class="btn-ember mt-6 self-start">
+          Subscribe on YouTube
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONNECT -->
+  <section class="mx-auto max-w-4xl px-6 pb-32 text-center">
+    <div class="reveal">
+      <h2 class="mt-6 font-display text-4xl text-[color:var(--color-paper)]">Connect with us</h2>
+      <p class="mt-4 text-[color:var(--color-muted)] max-w-xl mx-auto">
+        Have questions, need prayer, curious about ALTR, 
+        or simply want to connect with someone from our staff? 
+        We’d love to hear from you! Reach out to us anytime, 
+        and a member of our team would be happy to connect.
+      </p>
+      <a href="mailto:altrchurch@gmail.com" class="btn-ember mt-8 inline-flex">Email altrchurch@gmail.com</a>
+    </div>
+  </section>
+</Layout>

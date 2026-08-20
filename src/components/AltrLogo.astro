@@ -1,0 +1,18 @@
+---
+import { Image } from "astro:assets";
+import logoImg from "../images/ALTRlogo.png";
+
+interface Props {
+  height?: string; // e.g. "40px", "2.5rem", "10vh"
+  class?: string;
+}
+
+const { height = "50px", class: className = "" } = Astro.props;
+---
+
+<Image
+  src={logoImg}
+  alt="ALTR Logo"
+  class={`w-auto block ${className}`}
+  style={{ height }}
+/>

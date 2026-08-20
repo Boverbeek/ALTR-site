@@ -1,0 +1,85 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Prayer & Connect" description="Send a prayer request or get in touch with the ALTR team.">
+  <section class="pt-40 pb-16 px-6">
+    <div class="mx-auto max-w-3xl text-center">
+      <p class="eyebrow reveal mt-6">Prayer &amp; Connect</p>
+      <h1 class="reveal mt-4 font-display text-5xl md:text-6xl text-[color:var(--color-paper)]">
+        Bring it to the altar
+      </h1>
+      <p class="reveal mt-6 text-lg text-[color:var(--color-muted)]">
+        Whatever it is, you don't have to carry it alone. Whether its a 
+        praise or unexpected event send it over —
+        by form or by email — and it'll reach a real person on our team,
+        held in confidence.
+      </p>
+    </div>
+  </section>
+
+  <div class="reveal mb-8 text-center">
+    <p class="text-sm text-[color:var(--color-muted)]">Prefer email or Discord?</p>
+    <div class="mt-3 flex flex-wrap justify-center gap-4">
+      <a href="mailto:altrchurch@gmail.com" class="text-[color:var(--color-ember-soft)] hover:text-[color:var(--color-gold)] font-medium">
+        altrchurch@gmail.com
+      </a>
+      <span class="text-[color:var(--color-line)]">·</span>
+      <a href="https://discord.gg/" target="_blank" rel="noopener noreferrer" class="text-[color:var(--color-ember-soft)] hover:text-[color:var(--color-gold)] font-medium">
+        #prayer-wall on Discord
+      </a>
+    </div>
+  </div>
+
+  <section class="mx-auto max-w-2xl px-6 pb-28">
+    <!--
+      NOTE FOR DEV: this form posts nowhere yet. Wire the `action` up to a
+      form backend (Formspree, Netlify Forms, a serverless function, etc.)
+      before launch, or swap this block for that provider's embed.
+    -->
+    <form class="reveal card p-8 md:p-10 space-y-6" method="POST">
+      <div>
+        <label for="name" class="eyebrow block mb-2">Name (Optional)</label>
+        <input
+          id="name"
+          name="name"
+          type="text"
+          required
+          class="w-full rounded-lg bg-[color:var(--color-bg)] border border-[color:var(--color-line)] px-4 py-3 text-[color:var(--color-paper)] placeholder:text-[color:var(--color-muted)] focus:border-[color:var(--color-ember-soft)] outline-none transition-colors"
+          placeholder="What should we call you?"
+        />
+      </div>
+
+      <div>
+        <label for="email" class="eyebrow block mb-2">Email</label>
+        <input
+          id="email"
+          name="email"
+          type="email"
+          required
+          class="w-full rounded-lg bg-[color:var(--color-bg)] border border-[color:var(--color-line)] px-4 py-3 text-[color:var(--color-paper)] placeholder:text-[color:var(--color-muted)] focus:border-[color:var(--color-ember-soft)] outline-none transition-colors"
+          placeholder="you@example.com"
+        />
+      </div>
+
+      <div>
+        <label for="request" class="eyebrow block mb-2">Your prayer request</label>
+        <textarea
+          id="request"
+          name="request"
+          required
+          rows="5"
+          class="w-full rounded-lg bg-[color:var(--color-bg)] border border-[color:var(--color-line)] px-4 py-3 text-[color:var(--color-paper)] placeholder:text-[color:var(--color-muted)] focus:border-[color:var(--color-ember-soft)] outline-none transition-colors resize-none"
+          placeholder="Share as much or as little as you'd like."
+        ></textarea>
+      </div>
+
+      <label class="flex items-start gap-3 text-sm text-[color:var(--color-muted)]">
+        <input type="checkbox" name="anonymous" class="mt-1 accent-[color:var(--color-ember)]" />
+        Keep this request anonymous within the prayer team
+      </label>
+
+      <button type="submit" class="btn-ember w-full justify-center">Send prayer request</button>
+    </form>
+  </section>
+</Layout>

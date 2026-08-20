@@ -1,0 +1,68 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const steps = [
+  {
+    title: "Show up on a Sunday",
+    body: "Catch a live service on Twitch or YouTube. No sign-up, no account, no expectations — just press play.",
+  },
+  {
+    title: "Say hello in Discord",
+    body: "Introduce yourself in #welcome. It's the fastest way to find a small group, a study, or just someone to talk to.",
+  },
+  {
+    title: "Pick a rhythm",
+    body: "Weekly service, a mid-week study, or a standing prayer thread — join whatever fits the shape of your week.",
+  },
+];
+---
+
+<Layout title="Join ALTR" description="How to become part of the ALTR community.">
+  <section class="pt-40 pb-20 px-6">
+    <div class="mx-auto max-w-3xl text-center">
+      <p class="eyebrow reveal">Join ALTR</p>
+      <h1 class="reveal mt-4 font-display text-5xl md:text-6xl text-[color:var(--color-paper)]">
+        Become part of ALTR
+      </h1>
+      <p class="reveal mt-6 text-lg text-[color:var(--color-muted)]">
+        There's no membership form and no waiting period. Belonging
+        here starts the moment you show up — here's what that usually
+        looks like.
+      </p>
+    </div>
+  </section>
+
+  <!-- HOW TO REACH OUT -->
+  <section class="mx-auto max-w-4xl px-6 pb-28">
+    <div class="reveal card p-8 md:p-12 text-center">
+      <p class="eyebrow">Not sure where to start?</p>
+      <h2 class="mt-3 font-display text-3xl md:text-4xl text-[color:var(--color-paper)]">How to reach out</h2>
+      <p class="mt-4 text-[color:var(--color-muted)] max-w-xl mx-auto">
+        Send a message and a real person from the team will get back to
+        you — no bots, no auto-replies pretending to care.
+      </p>
+      <div class="mt-8 flex flex-wrap justify-center gap-4">
+        <a href="mailto:altrchurch@gmail.com" class="btn-ember">Email altrchurch@gmail.com</a>
+        <a href="/prayer" class="btn-ghost">Send a prayer request instead</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- STEPS -->
+  <section class="mx-auto max-w-5xl px-6 pb-24">
+    <div class="grid gap-6 md:grid-cols-3">
+      {steps.map((s, i) => (
+        <div class="reveal card p-7">
+          <p class="eyebrow">Step {i + 1}</p>
+          <p class="mt-3 font-display text-xl text-[color:var(--color-paper)]">{s.title}</p>
+          <p class="mt-3 text-sm text-[color:var(--color-muted)] leading-relaxed">{s.body}</p>
+        </div>
+      ))}
+    </div>
+
+    <div class="reveal mt-10 flex flex-wrap justify-center gap-4">
+      <a href="https://discord.gg/" target="_blank" rel="noopener noreferrer" class="btn-ember">Join the Discord</a>
+      <a href="https://twitch.tv/" target="_blank" rel="noopener noreferrer" class="btn-ghost">Watch a service</a>
+    </div>
+  </section>
+</Layout>

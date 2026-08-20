@@ -1,0 +1,88 @@
+---
+import AltrLogo from "./AltrLogo.astro";
+import SocialLinks from "./SocialLinks.astro";
+
+const links = [
+  { href: "/about", label: "About" },
+  { href: "/join", label: "Join ALTR" },
+  { href: "/prayer", label: "Prayer" },
+];
+const current = Astro.url.pathname;
+---
+
+<header id="site-nav" class="fixed top-0 inset-x-0 z-50 transition-colors duration-300">
+  <nav class="mx-auto max-w-6xl px-6">
+    <div class="flex items-center justify-between h-20">
+      <a href="/" class="flex items-center gap-2 group">
+        <AltrLogo/>
+        <span class="font-display text-xl tracking-tight text-[color:var(--color-paper)] group-hover:text-[color:var(--color-ember-soft)] transition-colors">
+          ALTR
+        </span>
+      </a>
+
+      <div class="hidden md:flex items-center gap-8">
+        {links.map((l) => (
+          <a
+            href={l.href}
+            class={`text-sm font-medium transition-colors ${
+              current === l.href ? "text-[color:var(--color-ember-soft)]" : "text-[color:var(--color-paper)] hover:text-[color:var(--color-ember-soft)]"
+            }`}
+          >
+            {l.label}
+          </a>
+        ))}
+        <SocialLinks class="pl-2 border-l border-[color:var(--color-line)]" />
+        <a href="/give" class="btn-ember text-sm !py-2 !px-5">Give</a>
+      </div>
+
+      <button
+        id="nav-toggle"
+        class="md:hidden flex flex-col gap-1.5 p-2 -mr-2"
+        aria-label="Toggle menu"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+      >
+        <span class="w-6 h-[2px] bg-[color:var(--color-paper)]"></span>
+        <span class="w-6 h-[2px] bg-[color:var(--color-paper)]"></span>
+      </button>
+    </div>
+  </nav>
+
+  <div id="mobile-menu" class="hidden md:hidden border-t border-[color:var(--color-line)] bg-[color:var(--color-bg)]/98">
+    <div class="px-6 py-6 flex flex-col gap-5">
+      {links.map((l) => (
+        <a href={l.href} class="text-lg font-medium text-[color:var(--color-paper)]">{l.label}</a>
+      ))}
+      <a href="/give" class="btn-ember justify-center">Give</a>
+      <SocialLinks class="pt-3" />
+    </div>
+  </div>
+</header>
+
+<style>
+   #site-nav.scrolled { /*#site-nav { */
+    background: color-mix(in srgb, var(--color-bg) 85%, transparent);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--color-line);
+  }
+</style>
+
+<script>
+  const nav = document.getElementById("site-nav");
+  const toggle = document.getElementById("nav-toggle");
+  const menu = document.getElementById("mobile-menu");
+
+  const onScroll = () => {
+    if (!nav) return;
+    if (window.scrollY > 8) nav.classList.add("scrolled");
+    else nav.classList.remove("scrolled");
+  };
+  onScroll();
+  window.addEventListener("scroll", onScroll, { passive: true });
+
+  toggle?.addEventListener("click", () => {
+    const isOpen = menu?.classList.contains("hidden") === false;
+    menu?.classList.toggle("hidden");
+    toggle.setAttribute("aria-expanded", String(!isOpen));
+  });
+</script>

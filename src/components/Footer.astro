@@ -1,0 +1,43 @@
+---
+import AltrLogo from "./AltrLogo.astro";
+import SocialLinks from "./SocialLinks.astro";
+---
+
+<footer class="border-t border-[color:var(--color-line)] mt-32">
+  <div class="mx-auto max-w-6xl px-6 py-16 grid gap-12 md:grid-cols-3">
+    <div>
+      <a href="/" class="flex items-center gap-2">
+        <AltrLogo height="70px"/>
+        <span class="font-display text-3xl text-[color:var(--color-paper)]">ALTR</span>
+      </a>
+      <p class="mt-4 text-sm text-[color:var(--color-muted)] max-w-xs">
+        A gathering place for people who stream, scroll, and show up online first.
+      </p>
+      <SocialLinks class="mt-5" />
+    </div>
+
+    <div>
+      <p class="eyebrow mb-4">Find your way</p>
+      <ul class="space-y-3 text-sm">
+        <li><a href="/about" class="text-[color:var(--color-paper)] hover:text-[color:var(--color-ember-soft)]">About</a></li>
+        <li><a href="/join" class="text-[color:var(--color-paper)] hover:text-[color:var(--color-ember-soft)]">Join ALTR</a></li>
+        <li><a href="/prayer" class="text-[color:var(--color-paper)] hover:text-[color:var(--color-ember-soft)]">Prayer &amp; Connect</a></li>
+        <li><a href="/give" class="text-[color:var(--color-paper)] hover:text-[color:var(--color-ember-soft)]">Give</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <p class="eyebrow mb-4">Reach out</p>
+      <p class="text-sm text-[color:var(--color-muted)]">Have a prayer request or just want to say hi?</p>
+      <a href="mailto:altrchurch@gmail.com" class="mt-2 inline-block text-sm text-[color:var(--color-ember-soft)] hover:text-[color:var(--color-gold)]">
+        altrchurch@gmail.com
+      </a>
+    </div>
+  </div>
+
+  <div class="border-t border-[color:var(--color-line)] py-6">
+    <p class="text-center text-xs text-[color:var(--color-muted)]">
+      &copy; {new Date().getFullYear()} ALTR. Built for the ones who show up from a screen.
+    </p>
+  </div>
+</footer>
