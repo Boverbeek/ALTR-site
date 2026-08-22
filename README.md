@@ -1,8 +1,6 @@
-# ALTR — starter site
+# ALTR site
 
-Astro + Tailwind CSS v4 + GSAP. Five pages, one shared nav/footer, an
-ember/altar visual identity built around a warm charcoal palette, gold
-and ember-orange accents, and a flickering flame signature motif.
+Astro + Tailwind CSS v4 + GSAP. Five pages, one shared nav/footer.
 
 ## Run it
 
@@ -21,7 +19,7 @@ src/
     Nav.astro          top navigation (social links, About, Join ALTR, Prayer, Give)
     Footer.astro
     SocialLinks.astro   icon row — update hrefs to your real profiles
-    Ember.astro         the flame signature, reused across pages
+    AltrLogo.astro         the flame signature, reused across pages
   layouts/
     Layout.astro        shared head, fonts, nav/footer wrapper
   scripts/
@@ -37,18 +35,13 @@ src/
 ## Things to swap out before launch
 
 - **Social links** — `src/components/SocialLinks.astro` has placeholder
-  hrefs for Instagram, TikTok, YouTube, Twitch.
+  hrefs for Instagram, TikTok, Facebook, YouTube, Twitch.
 - **Twitch / Discord / YouTube URLs** — currently point at the bare
   platform homepages (`twitch.tv/`, `discord.gg/`, `youtube.com/`) in
   `index.astro`, `join.astro`, and `prayer.astro`.
-- **Email addresses** — `hello@altr.church` and `prayer@altr.church`
-  in `Footer.astro`, `join.astro`, and `prayer.astro`.
 - **Prayer form** — `src/pages/prayer.astro` renders a real form but it
   doesn't post anywhere yet. Wire the `<form>` up to a backend
-  (Formspree, Netlify Forms, a serverless function) or swap in that
-  provider's embed — there's a comment marking the spot.
-- **Give button** — `src/pages/give.astro` has a placeholder `href="#"`;
-  point it at your giving platform.
+  Google form.
 - **Images** — the "Previous services" and YouTube sections use
   `picsum.photos` placeholder images (seeded, so they're stable across
   reloads). Swap the `src` in `index.astro` for real thumbnails/photos.
