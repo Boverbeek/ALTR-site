@@ -22,12 +22,21 @@ const services = [
         <AltrLogo height = "110px"/>
         ALTR
       </h1>
+      <h2 class="reveal font-display text-xl text-[color:var(--color-ember)] flex items-center justify-center">
+        See Faith Differently
+      </h2>
       <p class="reveal mt-6 text-lg md:text-xl text-[color:var(--color-muted)] max-w-2xl mx-auto">
+        A church for the terminally online—meeting you where you are, 
+        inviting you to explore faith, find authentic community, and 
+        experience church in a whole new way. Stream with us live on 
+        Twitch and connect every day through Discord.
+      </p>
+      <!-- <p class="reveal mt-6 text-lg md:text-xl text-[color:var(--color-muted)] max-w-2xl mx-auto">
         A church that meets you where you are, inviting you 
         to explore faith, find authentic community, and experience 
         church in a whole new way—streaming live on Twitch and 
         connecting every day through Discord.
-      </p>
+      </p> -->
       <div class="reveal mt-10 flex flex-wrap justify-center gap-4">
         <!-- <a href="#watch" class="btn-ghost">Watch Live</a> -->
         <a href="#" aria-disabled="true" tabindex="-1" class="btn-ghost pointer-events-none opacity-50 cursor-not-allowed">Watch Live - Coming soon</a> 
@@ -147,7 +156,8 @@ const services = [
 
     <div class="grid gap-6 md:grid-cols-3">
       {services.map((s) => (
-        <a href="https://youtube.com/" target="_blank" rel="noopener noreferrer" class="reveal card overflow-hidden group">
+        // <a href="https://youtube.com/" target="_blank" rel="noopener noreferrer" class="reveal card overflow-hidden group">
+        <a href="https://youtube.com/" aria-disabled="true" tabindex="-1" class="reveal card overflow-hidden group pointer-events-none opacity-50 cursor-not-allowed">
           <div class="aspect-video overflow-hidden">
             <img
               src={`https://picsum.photos/seed/${s.img}/640/360`}
