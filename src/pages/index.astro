@@ -1,11 +1,9 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import AltrLogo from "../components/AltrLogo.astro";
-import { Image } from 'astro:assets';
-import heroImage from '../images/test.png';
 
 const services = [
-  { title: "Coming Soon...", date: "Sep 20, 2026", img: "altr-service-2" },
+  { title: "Coming 9.20.2026", date: "Sep 20, 2026", img: "altr-service-2" },
 ];
 ---
 
@@ -31,16 +29,11 @@ const services = [
         experience church in a whole new way. Stream with us live on 
         Twitch and connect every day through Discord.
       </p>
-      <!-- <p class="reveal mt-6 text-lg md:text-xl text-[color:var(--color-muted)] max-w-2xl mx-auto">
-        A church that meets you where you are, inviting you 
-        to explore faith, find authentic community, and experience 
-        church in a whole new way—streaming live on Twitch and 
-        connecting every day through Discord.
-      </p> -->
+      
       <div class="reveal mt-10 flex flex-wrap justify-center gap-4">
-        <!-- <a href="#watch" class="btn-ghost">Watch Live</a> -->
-        <a href="#" aria-disabled="true" tabindex="-1" class="btn-ghost pointer-events-none opacity-50 cursor-not-allowed">Watch Live - Coming soon</a> 
-        <a href="#discord" class="btn-ember">Join the Discord</a>
+        <a href="https://www.twitch.tv/altrdigitalchurch" class="btn-ghost">Watch Live - Coming 9.20.2026</a>
+        <!-- <a href="https://www.twitch.tv/altrdigitalchurch" aria-disabled="true" tabindex="-1" class="btn-ghost pointer-events-none opacity-50 cursor-not-allowed">Watch Live - Coming 9.20.2026</a>  -->
+        <a href="https://discord.gg/pF7gzBEY5A" class="btn-ember">Join the Discord</a>
       </div>
     </div>
   </section>
@@ -97,7 +90,7 @@ const services = [
     <div class="reveal card grid gap-8 p-8 md:p-10 md:grid-cols-3">
       <div>
         <p class="eyebrow">Where to find us</p>
-        <p class="mt-3 text-2xl font-display text-[color:var(--color-paper)]">Sundays, 7:00 PM ET</p>
+        <p class="mt-3 text-2xl font-display text-[color:var(--color-paper)]">Sunday 9/20, 7:00 PM CT</p>
         <p class="mt-2 text-sm text-[color:var(--color-muted)]">Wherever you've got a signal.</p>
       </div>
       <div>
@@ -149,15 +142,14 @@ const services = [
         <p class="eyebrow">Missed one?</p>
         <h2 class="mt-2 font-display text-4xl text-[color:var(--color-paper)]">Previous services</h2>
       </div>
-      <a href="https://youtube.com/" target="_blank" rel="noopener noreferrer" class="hidden sm:inline text-sm text-[color:var(--color-ember-soft)] hover:text-[color:var(--color-gold)]">
+      <a href="https://www.youtube.com/@ALTRDigitalChurch" target="_blank" rel="noopener noreferrer" class="hidden sm:inline text-sm text-[color:var(--color-ember-soft)] hover:text-[color:var(--color-gold)]">
         View all &rarr;
       </a>
     </div>
 
     <div class="grid gap-6 md:grid-cols-3">
       {services.map((s) => (
-        // <a href="https://youtube.com/" target="_blank" rel="noopener noreferrer" class="reveal card overflow-hidden group">
-        <a href="https://youtube.com/" aria-disabled="true" tabindex="-1" class="reveal card overflow-hidden group pointer-events-none opacity-50 cursor-not-allowed">
+        <a href="https://www.youtube.com/@ALTRDigitalChurch" target="_blank" rel="noopener noreferrer" class="reveal card overflow-hidden group">
           <div class="aspect-video overflow-hidden">
             <img
               src={`https://picsum.photos/seed/${s.img}/640/360`}
@@ -199,7 +191,7 @@ const services = [
           Full services, short clips, and the occasional behind-the-scenes —
           all archived so you can catch up on your own time.
         </p>
-        <a href="https://youtube.com/" target="_blank" rel="noopener noreferrer" class="btn-ember mt-6 self-start">
+        <a href="https://www.youtube.com/@ALTRDigitalChurch" target="_blank" rel="noopener noreferrer" class="btn-ember mt-6 self-start">
           Subscribe on YouTube
         </a>
       </div>

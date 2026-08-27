@@ -32,54 +32,63 @@ import Layout from "../layouts/Layout.astro";
   </div>
 
   <section class="mx-auto max-w-2xl px-6 pb-28">
-    <!--
-      NOTE FOR DEV: this form posts nowhere yet. Wire the `action` up to a
-      form backend (Formspree, Netlify Forms, a serverless function, etc.)
-      before launch, or swap this block for that provider's embed.
-    -->
-    <form class="reveal card p-8 md:p-10 space-y-6" method="POST">
-      <div>
-        <label for="name" class="eyebrow block mb-2">Name (Optional)</label>
-        <input
-          id="name"
-          name="name"
-          type="text"
-          required
-          class="w-full rounded-lg bg-[color:var(--color-bg)] border border-[color:var(--color-line)] px-4 py-3 text-[color:var(--color-paper)] placeholder:text-[color:var(--color-muted)] focus:border-[color:var(--color-ember-soft)] outline-none transition-colors"
-          placeholder="What should we call you?"
-        />
-      </div>
+    <div id="form-wrap">
+      <form id="prayer-form" class="reveal card p-8 md:p-10 space-y-6">
+        <div>
+          <label for="name" class="eyebrow block mb-2">Name (Optional)</label>
+          <input
+            id="name"
+            name="name"
+            type="text"
+            class="w-full rounded-lg bg-[color:var(--color-bg)] border border-[color:var(--color-line)] px-4 py-3 text-[color:var(--color-paper)] placeholder:text-[color:var(--color-muted)] focus:border-[color:var(--color-ember-soft)] outline-none transition-colors"
+            placeholder="What should we call you?"
+          />
+        </div>
 
-      <div>
-        <label for="email" class="eyebrow block mb-2">Email</label>
-        <input
-          id="email"
-          name="email"
-          type="email"
-          required
-          class="w-full rounded-lg bg-[color:var(--color-bg)] border border-[color:var(--color-line)] px-4 py-3 text-[color:var(--color-paper)] placeholder:text-[color:var(--color-muted)] focus:border-[color:var(--color-ember-soft)] outline-none transition-colors"
-          placeholder="you@example.com"
-        />
-      </div>
+        <div>
+          <label for="email" class="eyebrow block mb-2">Email (Optional)</label>
+          <input
+            id="email"
+            name="email"
+            type="email"
+            class="w-full rounded-lg bg-[color:var(--color-bg)] border border-[color:var(--color-line)] px-4 py-3 text-[color:var(--color-paper)] placeholder:text-[color:var(--color-muted)] focus:border-[color:var(--color-ember-soft)] outline-none transition-colors"
+            placeholder="you@example.com"
+          />
+        </div>
 
-      <div>
-        <label for="request" class="eyebrow block mb-2">Your prayer request</label>
-        <textarea
-          id="request"
-          name="request"
-          required
-          rows="5"
-          class="w-full rounded-lg bg-[color:var(--color-bg)] border border-[color:var(--color-line)] px-4 py-3 text-[color:var(--color-paper)] placeholder:text-[color:var(--color-muted)] focus:border-[color:var(--color-ember-soft)] outline-none transition-colors resize-none"
-          placeholder="Share as much or as little as you'd like."
-        ></textarea>
-      </div>
+        <div>
+          <label for="request" class="eyebrow block mb-2">Your prayer request</label>
+          <textarea
+            id="request"
+            name="request"
+            required
+            rows="5"
+            class="w-full rounded-lg bg-[color:var(--color-bg)] border border-[color:var(--color-line)] px-4 py-3 text-[color:var(--color-paper)] placeholder:text-[color:var(--color-muted)] focus:border-[color:var(--color-ember-soft)] outline-none transition-colors resize-none"
+            placeholder="Share as much or as little as you'd like."
+          ></textarea>
+        </div>
 
-      <label class="flex items-start gap-3 text-sm text-[color:var(--color-muted)]">
-        <input type="checkbox" name="anonymous" class="mt-1 accent-[color:var(--color-ember)]" />
-        Keep this request anonymous within the prayer team
-      </label>
+        <label class="flex items-start gap-3 text-sm text-[color:var(--color-muted)]">
+          <input type="checkbox" name="anonymous" class="mt-1 accent-[color:var(--color-ember)]" />
+          Keep this request anonymous within the prayer team
+        </label>
 
-      <button type="submit" class="btn-ember w-full justify-center">Send prayer request</button>
-    </form>
+        <button type="submit" class="btn-ember w-full justify-center">Send prayer request</button>
+        <p id="form-error" class="hidden text-sm text-red-400">
+          Something went wrong. Please try again or reach out to us directly.
+        </p>
+      </form>
+    </div>
+
+    <div id="confirmation" class="hidden card p-8 md:p-10 text-center space-y-3">
+      <h3 class="eyebrow">Thank you</h3>
+      <p class="text-[color:var(--color-paper)]">
+        Your prayer request has been received. Our team is honored to carry this with you.
+      </p>
+    </div>
   </section>
+
+  <script>
+    import "../scripts/prayer-form.js";
+  </script>
 </Layout>
